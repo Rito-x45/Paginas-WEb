@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopta tu Mejor Amigo - Mis Huellas a Casa</title>
+    <link rel="stylesheet" href="/Veterinaria huellas a casa/css/adopcion.css">
+    <script src="/Veterinaria huellas a casa/js/adopcion.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/Veterinaria huellas a casa/imagenes/logo.png" alt="Mis Huellas a Casa">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/Veterinaria huellas a casa/html/index.html">Inicio</a></li>
+                <li><a href="/Veterinaria huellas a casa/html/servicios.html">Servicios</a></li>
+                <li><a href="/Veterinaria huellas a casa/html/contacto.html">Contacto</a></li>
+                <li><a href="#adoption-gallery">Adopta un amigo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="adoption-header">
+        <div class="adoption-header-content">
+            <h1>Adopta un Mejor Amigo</h1>
+            <p>¡Cambia la vida de un animal y la tuya para siempre!</p>
+            <a href="#adoption-gallery" class="cta-button">Ver Animales en Adopción</a>
+        </div>
+    </section>
+
+    <section id="adoption-gallery">
+        <h2>Animales Disponibles</h2>
+
+        <div class="filters">
+            <label for="animal-type">Tipo de Animal:</label>
+            <select id="animal-type" name="animal-type">
+                <option value="todos">Todos</option>
+                <option value="perro">Perro</option>
+                <option value="gato">Gato</option>
+                <option value="conejo">Conejo</option>
+                <option value="huron">Hurón</option>
+            </select>
+            
+            <label for="age">Edad:</label>
+            <select id="age" name="age">
+                <option value="todos">Todas</option>
+                <option value="cachorro">Cachorro</option>
+                <option value="adulto">Adulto</option>
+                <option value="senior">Senior</option>
+            </select>
+            
+            <label for="size">Tamaño:</label>
+            <select id="size" name="size">
+                <option value="todos">Todos</option>
+                <option value="pequeno">Pequeño</option>
+                <option value="mediano">Mediano</option>
+                <option value="grande">Grande</option>
+            </select>
+        </div>
+
+        <div class="animal-cards">
+            <!-- Tarjetas de animales disponibles -->
+            <div class="animal-card">
+                <img src="/Veterinaria huellas a casa/imagenes/perro1.jpg" alt="Perro 1">
+                <div class="animal-info">
+                    <h3>Rex</h3>
+                    <p><strong>Raza:</strong> Labrador</p>
+                    <p><strong>Edad:</strong> 3 años</p>
+                    <p><strong>Tamaño:</strong> Grande</p>
+                    <p><strong>Características:</strong> Amigable, activo, y muy cariñoso.</p>
+                    <a href="#contact" class="adopt-button">Adoptar a Rex</a>
+                </div>
+            </div>
+            <div class="animal-card">
+                <img src=" /Veterinaria huellas a casa/imagenes/gato1.jpg" alt="Gato 1">
+                <div class="animal-info">
+                    <h3>Minino</h3>
+                    <p><strong>Raza:</strong> Siames</p>
+                    <p><strong>Edad:</strong> 2 años</p>
+                    <p><strong>Tamaño:</strong> Mediano</p>
+                    <p><strong>Características:</strong> Tranquilo, independiente, y muy juguetón.</p>
+                    <a href="#contact" class="adopt-button">Adoptar a Minino</a>
+                </div>
+            </div>
+            <div class="animal-card">
+                <img src="/Veterinaria huellas a casa/imagenes/perro2.jpg" alt="Perro 2">
+                <div class="animal-info">
+                    <h3>Bella</h3>
+                    <p><strong>Raza:</strong> Chihuahua</p>
+                    <p><strong>Edad:</strong> 1 año</p>
+                    <p><strong>Tamaño:</strong> Pequeña</p>
+                    <p><strong>Características:</strong> Dulce, tranquila, ideal para apartamento.</p>
+                    <a href="#contact" class="adopt-button">Adoptar a Bella</a>
+                </div>
+            </div>
+            <div class="animal-card">
+                <img src="/Veterinaria huellas a casa/imagenes/gato2.jpg" alt="Gato 2">
+                <div class="animal-info">
+                    <h3>Pelusa</h3>
+                    <p><strong>Raza:</strong> Persa</p>
+                    <p><strong>Edad:</strong> 2 meses</p>
+                    <p><strong>Tamaño:</strong> Mediano</p>
+                    <p><strong>Características:</strong> Cariñosa, juguetona, y con una hermosa melena.</p>
+                    <a href="#contact" class="adopt-button">Adoptar a Pelusa</a>
+                </div>
+            </div>
+            <div class="animal-card">
+                <img src="/Veterinaria huellas a casa/imagenes/cuy1.jpg" alt="Cuy 1">
+                <div class="animal-info">
+                    <h3>Pepe</h3>
+                    <p><strong>Raza:</strong> Cuy</p>
+                    <p><strong>Edad:</strong> 6 meses</p>
+                    <p><strong>Tamaño:</strong> Pequeño</p>
+                    <p><strong>Características:</strong> Muy sociable y amigable con niños.</p>
+                    <a href="#contact" class="adopt-button">Adoptar a Pepe</a>
+                </div>
+            </div>
+            <div class="animal-card">
+                <img src="/Veterinaria huellas a casa/imagenes/chinchilla1.jpg" alt="Chinchilla 1">
+                <div class="animal-info">
+                    <h3>Chiqui</h3>
+                    <p><strong>Raza:</strong> Chinchilla</p>
+                    <p><strong>Edad:</strong> 1 año</p>
+                    <p><strong>Tamaño:</strong> Pequeña</p>
+                    <p><strong>Características:</strong> Cariñosa, activa, y le encanta brincar.</p>
+                    <a href="#contact" class="adopt-button">Adoptar a Chiqui</a>
+                </div>
+            </div>
+            <div class="animal-card">
+                <img src="/Veterinaria huellas a casa/imagenes/perro3.jpg" alt="Perro 3">
+                <div class="animal-info">
+                    <h3>Max</h3>
+                    <p><strong>Raza:</strong> Beagle</p>
+                    <p><strong>Edad:</strong> 5 años</p>
+                    <p><strong>Tamaño:</strong> Mediano</p>
+                    <p><strong>Características:</strong> Activo, le encanta correr y jugar.</p>
+                    <a href="#contact" class="adopt-button">Adoptar a Max</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE FORMULARIO DE ADOPCIÓN -->
+    <section id="adoption-form">
+        <h2>Formulario de Adopción</h2>
+        <p>Si estás interesado en adoptar uno de nuestros animales, por favor completa el siguiente formulario.</p>
+        <form id="adoption-form">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="animal-name">Nombre del Animal:</label>
+            <input type="text" id="animal-name" name="animal-name" required>
+
+            <label for="reason">Razón para adoptar:</label>
+            <textarea id="reason" name="reason" required></textarea>
+
+            <button type="submit">Enviar Solicitud</button>
+        </form>
+
+        <!-- Mensajes de confirmación y error -->
+        <div id="confirmation-message" style="display: none; color: green; margin-top: 20px;">
+            ¡Gracias por tu interés! Hemos recibido tu solicitud de adopción.
+        </div>
+
+        <div id="error-message" style="display: none; color: red; margin-top: 20px;">
+            Por favor, completa todos los campos del formulario.
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Mis Huellas a Casa - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>

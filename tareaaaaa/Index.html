@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automobiles Kuro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Automobiles Kuro</h1>
+    
+    <!-- Apartado de promociones -->
+    <div class="promotions">
+        <h2>Promociones</h2>
+        <p>Puedes comparar los autos y obtener promociones especiales.</p>
+        <button onclick="showPromotions()">Ver Promociones</button>
+    </div>
+
+    <!-- Lista de productos -->
+    <div class="products">
+        <h2>Ferrari</h2>
+        <div class="product" data-name="Ferrari F8" data-price="250000">
+            <img src="ferrari_f8.jpg" alt="Ferrari F8">
+            <h3>Ferrari F8</h3>
+            <p>Precio: $250,000</p>
+            <p>Descripción: Un superdeportivo icónico con un diseño impresionante.</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Ferrari F8', 250000)">Agregar al Carrito</button>
+        </div>
+        <div class="product" data-name="Ferrari 488" data-price="240000">
+            <img src="ferrari_488.jpg" alt="Ferrari 488">
+            <h3>Ferrari 488</h3>
+            <p>Precio: $240,000</p>
+            <p>Descripción: Un ejemplo de potencia y elegancia, ideal para los amantes de la velocidad.</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Ferrari 488', 240000)">Agregar al Carrito</button>
+        </div>
+        <div class="product" data-name="Ferrari Portofino" data-price="220000">
+            <img src="ferrari_portofino.jpg" alt="Ferrari Portofino">
+            <h3>Ferrari Portofino</h3>
+            <p>Precio: $220,000</p>
+            <p>Descripción: Un convertible que combina lujo y rendimiento en cada viaje.</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Ferrari Portofino', 220000)">Agregar al Carrito</button>
+        </div>
+        <div class="product" data-name="Ferrari Roma" data-price="200000">
+            <img src="ferrari_roma.jpg" alt="Ferrari Roma">
+            <h3>Ferrari Roma</h3>
+            <p>Precio: $200,000</p>
+            <p>Descripción: Un coupé que evoca el estilo y la elegancia de la ciudad de Roma.</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Ferrari Roma', 200000)">Agregar al Carrito</button>
+        </div>
+        <div class="product" data-name="Ferrari LaFerrari" data-price="1500000">
+            <img src="ferrari_laferrari.jpg" alt="Ferrari LaFerrari">
+            <h3>Ferrari LaFerrari</h3>
+            <p>Precio: $1,500,000</p>
+            <p>Descripción: Un superdeportivo híbrido que redefine el rendimiento y la tecnología.</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Ferrari LaFerrari', 1500000)">Agregar al Carrito</button>
+        </div>
+
+        <h2>Lamborghini</h2>
+        <div class="product" data-name="Lamborghini Aventador" data-price="400000">
+            <img src="lamborghini_aventador.jpg" alt="Lamborghini Aventador">
+            <h3>Lamborghini Aventador</h3>
+            <p>Precio: $400,000</p>
+            <p>Descripción: Un símbolo de potencia y diseño audaz en el mundo de los superdeportivos.</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Lamborghini Aventador', 400000)">Agregar al Carrito</button>
+        </div>
+        <div class="product" data-name="Lamborghini Huracán" data-price="250000">
+            <img src="lamborghini_huracan.jpg" alt="Lamborghini Huracán">
+            <h3>Lamborghini Huracán</h3>
+            <p>Precio: $250,000</p>
+            <p>Descripción: Un ejemplo de diseño y tecnología en un superdeportivo accesible.</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Lamborghini Huracán', 250000)">Agregar al Carrito</button>
+        </div>
+        <div class="product" data-name="Lamborghini Ego" data-price="200000">
+            <img src="lamborghini_ego.jpg" alt="Lamborghini Ego">
+            <h3>Lamborghini Ego</h3>
+            <p>Precio: $200,000</p>
+            <p>Descripción: Un coupé que combina diseño y rendimiento en un paquete atractivo.</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Lamborghini Ego', 200000)">Agregar al Carrito</button>
+        </div>
+        <div class="product" data-name="Lamborghini Diablo" data-price="150000">
+            <img src="lamborghini_diablo.jpg" alt="Lamborghini Diablo">
+            <h3>Lamborghini Diablo</h3>
+            <p>Precio: $150,000</p>
+            <p>Descripción: Un clásico de la marca que sigue siendo atractivo en la actualidad.</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Lamborghini Diablo', 150000)">Agregar al Carrito</button>
+        </div>
+        <div class="product" data-name="Lamborghini Murciélago" data-price="120000">
+            <img src="lamborghini_murcielago.jpg" alt="Lamborghini Murciélago">
+            <h3>Lamborghini Murciélago</h3>
+            <p>Precio: $120,000</p>
+            <p>Descripción: Un superdeportivo que combina diseño y potencia en un paquete atractivo.</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Lamborghini Murciélago', 120000)">Agregar al Carrito</button>
+        </div>
+
+        <h2>Nissan</h2>
+        <div class="product" data-name="Nissan GT-R" data-price="100000">
+            <img src="nissan_gt-r.jpg" alt="Nissan GT-R">
+            <h3>Nissan GT-R</h3>
+            <p>Precio: $100,000</p>
+            <p>Descripción: Un superdeportivo japonés que combina tecnología y rendimiento.</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Nissan GT-R', 100000)">Agregar al Carrito</button>
+        </div>
+        <div class="product" data-name="Nissan 370Z" data-price="50000">
+            <img src="nissan_370z.jpg" alt="Nissan 370Z">
+            <h3>Nissan 370Z</h3>
+            <p>Precio: $50,000</p>
+            <p>Descripción: Un coupé deportivo que ofrece un buen equilibrio entre precio y rendimiento.</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Nissan 370Z', 50000)">Agregar al Carrito</button>
+        </div>
+        <div class="product" data-name="Nissan Altima" data-price="30000">
+            <img src="nissan_altima.jpg" alt="Nissan Altima">
+            <h3>Nissan Altima</h3>
+            <p>Precio: $30,000</p>
+            <p>Descripción: Un sedán familiar que ofrece un buen equilibrio entre precio y comodidad.</p>
+ <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Nissan Altima', 30000)">Agregar al Carrito</button>
+        </div>
+        <div class="product" data-name="Nissan Sentra" data-price="20000">
+            <img src="nissan_sentra.jpg" alt="Nissan Sentra">
+            <h3>Nissan Sentra</h3>
+            <p>Precio: $20,000</p>
+            <p>Descripción: Un sedán compacto que ofrece un buen equilibrio entre precio y economía.</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Nissan Sentra', 20000)">Agregar al Carrito</button>
+        </div>
+        <div class="product" data-name="Nissan Versa" data-price="15000">
+            <img src="nissan_versa.jpg" alt="Nissan Versa">
+            <h3>Nissan Versa</h3>
+            <p>Precio: $15,000</p>
+            <p>Descripción: Un sedán subcompacto que ofrece un buen equilibrio entre precio y economía.</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart('Nissan Versa', 15000)">Agregar al Carrito</button>
+        </div>
+
+    </div>
+
+    <!-- Carrito -->
+    <div class="cart">
+        <h2>Carrito de Compras</h2>
+        <ul id="cartItems"></ul>
+        <p id="total">Total: $0</p>
+        <button onclick="clearCart()">Vaciar Carrito</button>
+        <button onclick="compare()">Comparar y Obtener Promoción</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

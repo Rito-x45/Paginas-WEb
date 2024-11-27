@@ -1,0 +1,135 @@
+/* Header */
+header {
+    background-color: #00AAE4;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    width: 150px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #5ccb5f;
+}
+
+/* Sección de Servicios */
+#services {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+#services h2 {
+    font-size: 36px;
+    text-align: center;
+    color: #5ccb5f;
+    margin-bottom: 30px;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+    font-size: 24px;
+    color: #00AAE4;
+}
+
+.service-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #00AAE4;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.cta-button:hover {
+    background-color: #005D80;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    #services {
+        padding: 30px 10px;
+    }
+
+    .service-item {
+        margin: 15px 0;
+    }
+}
+
+/* Estilos para el Footer */
+footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+footer a {
+    color: #f8f9fa;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #007bff; /* Cambia el color al azul cuando se pasa el mouse */
+}
+
+footer .social-links {
+    margin-top: 10px;
+}
+
+footer .social-links a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+footer .social-links a:hover {
+    transform: scale(1.2); /* Hace que los iconos de redes sociales aumenten de tamaño al pasar el mouse */
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    footer p {
+        font-size: 0.9rem;
+    }
+}

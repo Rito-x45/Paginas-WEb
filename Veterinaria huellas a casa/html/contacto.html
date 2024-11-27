@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto - Mis Huellas a Casa</title>
+    <link rel="stylesheet" href="/Veterinaria huellas a casa/css/contacto.css">
+    <script src="/Veterinaria huellas a casa/js/contacto.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/Veterinaria huellas a casa/imagenes/logo.png" alt="Mis Huellas a Casa">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/Veterinaria huellas a casa/html/index.html">Inicio</a></li>
+                <li><a href="/Veterinaria huellas a casa/html/adopcion.html">Adopción</a></li>
+                <li><a href="/Veterinaria huellas a casa/html/servicios.html">Servicios</a></li>
+                <li><a href="#contacto">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="contacto">
+        <h2>Formulario de Contacto</h2>
+        <p>Completa el formulario a continuación para agendar tu cita o hacernos una consulta.</p>
+        
+        <form id="contact-form">
+            <h3>Información del Propietario</h3>
+            <label for="owner-name">Nombre completo:</label>
+            <input type="text" id="owner-name" name="owner-name" required>
+
+            <label for="owner-phone">Número de teléfono:</label>
+            <input type="tel" id="owner-phone" name="owner-phone" required>
+
+            <label for="owner-email">Correo electrónico:</label>
+            <input type="email" id="owner-email" name="owner-email" required>
+
+            <label for="owner-address">Dirección:</label>
+            <input type="text" id="owner-address" name="owner-address" required>
+
+            <h3>Información de la Mascota</h3>
+            <label for="pet-name">Nombre de la mascota:</label>
+            <input type="text" id="pet-name" name="pet-name" required>
+
+            <label for="pet-species">Especie:</label>
+            <select id="pet-species" name="pet-species">
+                <option value="perro">Perro</option>
+                <option value="gato">Gato</option>
+                <option value="conejo">Conejo</option>
+                <option value="huron">Hurón</option>
+            </select>
+
+            <label for="pet-breed">Raza:</label>
+            <input type="text" id="pet-breed" name="pet-breed" required>
+
+            <label for="pet-age">Edad:</label>
+            <input type="number" id="pet-age" name="pet-age" required>
+
+            <label for="pet-gender">Sexo:</label>
+            <select id="pet-gender" name="pet-gender">
+                <option value="macho">Macho</option>
+                <option value="hembra">Hembra</option>
+            </select>
+
+            <label for="pet-size">Tamaño:</label>
+            <select id="pet-size" name="pet-size">
+                <option value="pequeño">Pequeño</option>
+                <option value="mediano">Mediano</option>
+                <option value="grande">Grande</option>
+            </select>
+
+            <h3>Razón de la Visita</h3>
+            <label for="reason">Selecciona la razón de tu visita:</label>
+            <select id="reason" name="reason">
+                <option value="consulta-general">Consulta general</option>
+                <option value="vacunacion">Vacunación</option>
+                <option value="desparasitacion">Desparasitación</option>
+                <option value="enfermedad">Enfermedad específica</option>
+                <option value="otro">Otro</option>
+            </select>
+            <textarea id="reason-details" name="reason-details" placeholder="Especifica más detalles (si aplica)"></textarea>
+
+            <h3>Fecha y Hora Solicitada</h3>
+            <label for="appointment-date">Selecciona la fecha y hora:</label>
+            <input type="datetime-local" id="appointment-date" name="appointment-date" required>
+
+            <h3>Información Adicional</h3>
+            <label for="vaccinated">¿La mascota está al día con sus vacunas?</label>
+            <select id="vaccinated" name="vaccinated">
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="medications">¿Está tomando algún medicamento actualmente?</label>
+            <select id="medications" name="medications">
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+            <textarea id="medications-details" name="medications-details" placeholder="Si es así, especifica los medicamentos."></textarea>
+
+            <label for="previous-surgery">¿Ha tenido alguna cirugía o enfermedad previa?</label>
+            <select id="previous-surgery" name="previous-surgery">
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+            <textarea id="previous-surgery-details" name="previous-surgery-details" placeholder="Si es así, especifica."></textarea>
+
+            <label for="questions">¿Tienes alguna pregunta o comentario adicional?</label>
+            <textarea id="questions" name="questions" placeholder="Escribe tu pregunta o comentario."></textarea>
+
+            <button type="submit" id="submit-button">Enviar Formulario</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mis Huellas a Casa - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>

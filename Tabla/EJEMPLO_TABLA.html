@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Deportistas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dddddd;
+            margin: 0; /* Eliminar margen para centrar mejor */
+            display: flex; /* Usar flexbox para centrar */
+            justify-content: center; /* Centrar horizontalmente */
+            align-items: center; /* Centrar verticalmente */
+            height: 100vh; /* Altura completa de la ventana */
+        }
+        .container {
+            display: inline-block; /* Permite que el contenedor ajuste su tamaño al contenido */
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        table {
+            width: auto; /* Cambia a auto para que se ajuste al contenido */
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #dddddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #000000;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #550000;
+        }
+        .total {
+            margin-top: 20px;
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tabla de Deportistas</h1>
+        
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" placeholder="Ingresa el nombre">
+        </div>
+        
+        <div class="form-group">
+            <label for="age">Edad:</label>
+            <input type="text" id="age" placeholder="Ingresa la edad">
+        </div>
+        
+        <div class="form-group">
+            <label for="country">País:</label>
+            <select id="country" onchange="updateContinent()">
+                <option value="México">México</option>
+                <option value="Argentina">Argentina</option>
+                <option value="España">España</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Chile">Chile</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="continent">Continente:</label>
+            <input type="text" id="continent" placeholder="Continente" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="salaryAnnual">Sueldo Anual:</label>
+            <input type="text" id="salaryAnnual" placeholder="Ingresa sueldo anual">
+        </div>
+        
+        <div class="form-group">
+            <label for="salaryMonthly">Sueldo Mensual:</label>
+            <input type="text" id="salaryMonthly" placeholder="Ingresa sueldo mensual">
+        </div>
+        
+        <div class="form-group">
+            <label for="club">Club:</label>
+            <select id="club">
+                <option value="FC Barcelona">FC Barcelona</option>
+                <option value="Real Madrid">Real Madrid</option>
+                <option value="Manchester United">Manchester United</option>
+                <option value="Bayern Munich">Bayern Munich</option>
+                <option value="Paris Saint-Germain">Paris Saint-Germain</option>
+                <option value="Liverpool">Liverpool</option>
+                <option value="Juventus">Juventus</option>
+            </select>
+        </div>
+        
+        <button class="btn" onclick="addData()">Agregar Datos</button>
+        
+        <h2>Tabla de Datos</h2>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>País</th>
+                    <th>Continente</th>
+                    <th>Sueldo Anual</th>
+                    <th>Sueldo Mensual</th>
+                    <th>Total</th>
+                    <th>Club</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <div class="total" id="totalSum">Total Sueldos: $0.00</div>
+    </div>
+
+    <script>
+        let data = [];
+        let totalSum = 0;
+
+        const clubLinks = {
+            "FC Barcelona": "https://en.wikipedia.org/wiki/FC_Barcelona",
+            "Real Madrid": "https://en.wikipedia.org/wiki/Real_Madrid_CF",
+            "Manchester United": "https://en.wikipedia.org/wiki/Manchester_United_FC",
+            "Bayern Munich": "https://en.wikipedia.org/wiki/FC_Bayern_Munich",
+            "Paris Saint-Germain": "https://en.wikipedia.org/wiki/Paris_Saint-Germain_F.C.",
+            "Liverpool": "https://en.wikipedia.org/wiki/Liverpool_F.C.",
+            "Juventus": "https://en.wikipedia.org/wiki/Juventus_F.C."
+        };
+
+        const countryContinents = {
+            "México": "América",
+            "Argentina": "América",
+            "España": "Europa",
+            "Colombia": "América",
+            "Chile": "América"
+        };
+
+        function updateContinent() {
+            const country = document.getElementById('country').value;
+            document.getElementById('continent').value = countryContinents[country];
+        }
+
+        function addData() {
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const country = document.getElementById('country').value;
+            const continent = document.getElementById('continent').value;
+            const salaryAnnual = parseFloat(document.getElementById('salaryAnnual').value) || 0;
+            const salaryMonthly = parseFloat(document.getElementById('salaryMonthly').value) || 0;
+            const club = document.getElementById('club').value;
+
+            const total = salaryAnnual + salaryMonthly;
+
+            if (name === "" || age === "" || country === "" || continent === "" || isNaN(salaryAnnual) || isNaN(salaryMonthly) || club === "") {
+                alert("Por favor, completa todos los campos.");
+                return;
+            }
+
+            const clubLink = clubLinks[club];
+
+            data.push([name, age, country, continent, salaryAnnual, salaryMonthly, total, club, clubLink]);
+            totalSum += total;
+
+            const tableBody = document.querySelector("#dataTable tbody");
+            tableBody.innerHTML = "";
+
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                row.forEach((cell, index) => {
+                    const td = document.createElement('td');
+                    if (index === 8) {
+                        const link = document.createElement('a');
+                        link.href = cell;
+                        link.textContent = "Ir a Wikipedia";
+                        link.target = "_blank";
+                        td.appendChild(link);
+                    } else {
+                        td.textContent = (index >= 4 && index <= 6) ? cell.toFixed(2) : cell;
+                    }
+                    tr.appendChild(td);
+                });
+                tableBody.appendChild(tr);
+            });
+
+            document.getElementById('totalSum').textContent = `Total Sueldos: $${totalSum.toFixed(2)}`;
+
+            document.getElementById('name').value = "";
+            document.getElementById('age').value = "";
+            document.getElementById('country').value = "México";
+            document.getElementById('continent').value = "";
+            document.getElementById('salaryAnnual').value = "";
+            document.getElementById('salaryMonthly').value = "";
+            document.getElementById('club').value = "FC Barcelona"; 
+        }
+    </script>
+</body>
+</html>

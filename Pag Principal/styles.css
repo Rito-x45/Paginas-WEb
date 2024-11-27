@@ -1,0 +1,56 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eaeaea; /* Color de fondo suave */
+    color: #333; /* Color del texto */
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 800px; /* Ancho máximo */
+    margin: 50px auto; /* Centrado en la página */
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco para el contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Títulos */
+h1 {
+    color: #2c3e50; /* Color del título */
+    text-align: center; /* Centrar el título */
+}
+
+/* Estilos de la lista */
+ul {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0;
+}
+
+li {
+    margin: 20px 0; /* Espaciado entre los enlaces */
+}
+
+/* Estilos de los enlaces */
+a {
+    display: inline-block; /* Hacer que el enlace sea un bloque */
+    padding: 15px 25px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    color: #fff; /* Color del texto */
+    background-color: #3498db; /* Color de fondo del enlace */
+    border-radius: 5px; /* Bordes redondeados en el enlace */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+}
+
+a:hover {
+    background-color: #2980b9; /* Color de fondo al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Estilo del párrafo */
+p {
+    text-align: center; /* Centrar el párrafo */
+    font-size: 1.1em; /* Tamaño de fuente ligeramente mayor */
+}
